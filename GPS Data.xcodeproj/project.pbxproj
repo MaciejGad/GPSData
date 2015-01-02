@@ -18,6 +18,9 @@
 		54F826F31A55F3AC00181063 /* GPS_Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54F826F01A55F3AC00181063 /* GPS_Data.xcdatamodeld */; };
 		54F826F51A55F53900181063 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826F41A55F53900181063 /* Position.swift */; };
 		54F826F61A55F53900181063 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826F41A55F53900181063 /* Position.swift */; };
+		54F826F81A574F7D00181063 /* HandoffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826F71A574F7D00181063 /* HandoffTests.swift */; };
+		54F826FA1A57513100181063 /* HandoffManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826F91A57513100181063 /* HandoffManager.swift */; };
+		54F826FB1A57513100181063 /* HandoffManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826F91A57513100181063 /* HandoffManager.swift */; };
 		6172BEC5D2D906C599EB89B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB54538A20BBDBD7DBD88F7 /* libPods.a */; };
 		9A8F97A9369274E46E1C188A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB54538A20BBDBD7DBD88F7 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,8 @@
 		54F826EF1A55EF0700181063 /* GPS-Data-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GPS-Data-Bridging-Header.h"; sourceTree = "<group>"; };
 		54F826F11A55F3AC00181063 /* GPS_Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GPS_Data.xcdatamodel; sourceTree = "<group>"; };
 		54F826F41A55F53900181063 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Position.swift; path = CoreDataModels/Position.swift; sourceTree = "<group>"; };
+		54F826F71A574F7D00181063 /* HandoffTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandoffTests.swift; sourceTree = "<group>"; };
+		54F826F91A57513100181063 /* HandoffManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandoffManager.swift; sourceTree = "<group>"; };
 		7C28C54A7E7FD5EDCB9A1F12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FB54538A20BBDBD7DBD88F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC833F33050C092C66135D94 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 			children = (
 				54F826CD1A55D7D600181063 /* AppDelegate.swift */,
 				54F826CF1A55D7D600181063 /* ViewController.swift */,
+				54F826F91A57513100181063 /* HandoffManager.swift */,
 				54F826D11A55D7D600181063 /* Main.storyboard */,
 				54F826D41A55D7D600181063 /* Images.xcassets */,
 				54F826D61A55D7D600181063 /* LaunchScreen.xib */,
@@ -129,6 +135,7 @@
 			children = (
 				54F826E31A55D7D600181063 /* GPS_DataTests.swift */,
 				54F826ED1A55EE4200181063 /* CoreDataTests.swift */,
+				54F826F71A574F7D00181063 /* HandoffTests.swift */,
 				54F826E11A55D7D600181063 /* Supporting Files */,
 			);
 			path = "GPS DataTests";
@@ -320,6 +327,7 @@
 			files = (
 				54F826D01A55D7D600181063 /* ViewController.swift in Sources */,
 				54F826F21A55F3AC00181063 /* GPS_Data.xcdatamodeld in Sources */,
+				54F826FA1A57513100181063 /* HandoffManager.swift in Sources */,
 				54F826F51A55F53900181063 /* Position.swift in Sources */,
 				54F826CE1A55D7D600181063 /* AppDelegate.swift in Sources */,
 			);
@@ -330,6 +338,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F826EE1A55EE4200181063 /* CoreDataTests.swift in Sources */,
+				54F826F81A574F7D00181063 /* HandoffTests.swift in Sources */,
+				54F826FB1A57513100181063 /* HandoffManager.swift in Sources */,
 				54F826F31A55F3AC00181063 /* GPS_Data.xcdatamodeld in Sources */,
 				54F826F61A55F53900181063 /* Position.swift in Sources */,
 				54F826E41A55D7D600181063 /* GPS_DataTests.swift in Sources */,

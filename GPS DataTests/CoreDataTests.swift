@@ -13,8 +13,6 @@ class CoreDataTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        //[MagicalRecord setupCoreDataStackWithInMemoryStore
-//        MagicalRecord.setDefaultModelFromClass(Position.self)
         MagicalRecord.setupCoreDataStackWithInMemoryStore()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
