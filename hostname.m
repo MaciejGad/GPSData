@@ -7,8 +7,12 @@
 //
 
 #import "hostname.h"
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <ifaddrs.h>
+
 
 NSString * serverHostname()
 {
@@ -22,4 +26,12 @@ NSString * serverHostname()
 #else
     return [NSString stringWithFormat:@"%s", baseHostName];
 #endif
+}
+
+NSString * localIPAddress()
+{
+    struct hostent *host = gethostbyname([serverHostname() UTF8String]);
+    if (!host) {herror("resolv"); return nil;}
+    struct in_addr **list = (struct in_addr **)host->h_addr_list;
+    return [NSString stringWithCString:inet_ntoa(*list[0]) encoding:NSUTF8StringEncoding];
 }

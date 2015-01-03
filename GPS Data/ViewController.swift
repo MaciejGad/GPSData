@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         startUserActivity()
         if let label = statusLabel {
-            label.text = "Open: " + serverHostname() + ":8080 on Your Mac"
+            label.text = "Open: " + serverHostname() + " on Your Mac"
         }
     }
 
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     func startUserActivity() {
         let activity = NSUserActivity(activityType: "pl.maciejgad.gpsdata")
         activity.title = "GPS Data"
-        activity.webpageURL = NSURL(string: "http://" + serverHostname() + ":8080")
+        activity.webpageURL = NSURL(string: "http://" + serverHostname())
         
         userActivity = activity
         userActivity?.becomeCurrent()

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         self.server = server
         var error: NSError?
-        if !server.start(error: &error) {
+        if !server.start(listenPort: 80, error: &error) {
             println("Server start error: \(error)")
         } else {
             println("Use " + serverHostname())
