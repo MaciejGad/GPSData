@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var error: NSError?
         if !server.start(error: &error) {
             println("Server start error: \(error)")
+        } else {
+            println("Use " + serverHostname())
         }
 
         return true

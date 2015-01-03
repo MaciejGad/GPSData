@@ -35,6 +35,8 @@
 		54F8270F1A576FEF00181063 /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827021A576FEF00181063 /* HttpServer.swift */; };
 		54F827101A576FEF00181063 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827031A576FEF00181063 /* Socket.swift */; };
 		54F827111A576FEF00181063 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827031A576FEF00181063 /* Socket.swift */; };
+		54F827171A57753200181063 /* hostname.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F827161A57753200181063 /* hostname.m */; };
+		54F827181A57753200181063 /* hostname.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F827161A57753200181063 /* hostname.m */; };
 		6172BEC5D2D906C599EB89B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB54538A20BBDBD7DBD88F7 /* libPods.a */; };
 		9A8F97A9369274E46E1C188A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB54538A20BBDBD7DBD88F7 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		54F827011A576FEF00181063 /* HttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
 		54F827021A576FEF00181063 /* HttpServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpServer.swift; sourceTree = "<group>"; };
 		54F827031A576FEF00181063 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		54F827161A57753200181063 /* hostname.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hostname.m; sourceTree = "<group>"; };
+		54F827191A5775B800181063 /* hostname.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hostname.h; sourceTree = "<group>"; };
 		7C28C54A7E7FD5EDCB9A1F12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FB54538A20BBDBD7DBD88F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC833F33050C092C66135D94 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				54F826EF1A55EF0700181063 /* GPS-Data-Bridging-Header.h */,
+				54F827191A5775B800181063 /* hostname.h */,
+				54F827161A57753200181063 /* hostname.m */,
 				54F826FC1A576FE100181063 /* Swifter */,
 				54F826CA1A55D7D500181063 /* GPS Data */,
 				54F826E01A55D7D600181063 /* GPS DataTests */,
@@ -367,6 +373,7 @@
 				54F827041A576FEF00181063 /* DemoServer.swift in Sources */,
 				54F826F21A55F3AC00181063 /* GPS_Data.xcdatamodeld in Sources */,
 				54F826FA1A57513100181063 /* HandoffManager.swift in Sources */,
+				54F827171A57753200181063 /* hostname.m in Sources */,
 				54F8270E1A576FEF00181063 /* HttpServer.swift in Sources */,
 				54F8270A1A576FEF00181063 /* HttpRequest.swift in Sources */,
 				54F827101A576FEF00181063 /* Socket.swift in Sources */,
@@ -382,6 +389,7 @@
 			files = (
 				54F826EE1A55EE4200181063 /* CoreDataTests.swift in Sources */,
 				54F8270B1A576FEF00181063 /* HttpRequest.swift in Sources */,
+				54F827181A57753200181063 /* hostname.m in Sources */,
 				54F8270F1A576FEF00181063 /* HttpServer.swift in Sources */,
 				54F827091A576FEF00181063 /* HttpParser.swift in Sources */,
 				54F826F81A574F7D00181063 /* HandoffTests.swift in Sources */,

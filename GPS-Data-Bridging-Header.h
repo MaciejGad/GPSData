@@ -11,5 +11,7 @@
 
 #define MR_SHORTHAND
 #import <MagicalRecord/CoreData+MagicalRecord.h>
+#import "hostname.h"
+
 
 #endif
