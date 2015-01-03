@@ -21,6 +21,20 @@
 		54F826F81A574F7D00181063 /* HandoffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826F71A574F7D00181063 /* HandoffTests.swift */; };
 		54F826FA1A57513100181063 /* HandoffManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826F91A57513100181063 /* HandoffManager.swift */; };
 		54F826FB1A57513100181063 /* HandoffManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826F91A57513100181063 /* HandoffManager.swift */; };
+		54F827041A576FEF00181063 /* DemoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826FD1A576FEF00181063 /* DemoServer.swift */; };
+		54F827051A576FEF00181063 /* DemoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826FD1A576FEF00181063 /* DemoServer.swift */; };
+		54F827061A576FEF00181063 /* HttpHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826FE1A576FEF00181063 /* HttpHandlers.swift */; };
+		54F827071A576FEF00181063 /* HttpHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826FE1A576FEF00181063 /* HttpHandlers.swift */; };
+		54F827081A576FEF00181063 /* HttpParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826FF1A576FEF00181063 /* HttpParser.swift */; };
+		54F827091A576FEF00181063 /* HttpParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F826FF1A576FEF00181063 /* HttpParser.swift */; };
+		54F8270A1A576FEF00181063 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827001A576FEF00181063 /* HttpRequest.swift */; };
+		54F8270B1A576FEF00181063 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827001A576FEF00181063 /* HttpRequest.swift */; };
+		54F8270C1A576FEF00181063 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827011A576FEF00181063 /* HttpResponse.swift */; };
+		54F8270D1A576FEF00181063 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827011A576FEF00181063 /* HttpResponse.swift */; };
+		54F8270E1A576FEF00181063 /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827021A576FEF00181063 /* HttpServer.swift */; };
+		54F8270F1A576FEF00181063 /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827021A576FEF00181063 /* HttpServer.swift */; };
+		54F827101A576FEF00181063 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827031A576FEF00181063 /* Socket.swift */; };
+		54F827111A576FEF00181063 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F827031A576FEF00181063 /* Socket.swift */; };
 		6172BEC5D2D906C599EB89B0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB54538A20BBDBD7DBD88F7 /* libPods.a */; };
 		9A8F97A9369274E46E1C188A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB54538A20BBDBD7DBD88F7 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -52,6 +66,13 @@
 		54F826F41A55F53900181063 /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Position.swift; path = CoreDataModels/Position.swift; sourceTree = "<group>"; };
 		54F826F71A574F7D00181063 /* HandoffTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandoffTests.swift; sourceTree = "<group>"; };
 		54F826F91A57513100181063 /* HandoffManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandoffManager.swift; sourceTree = "<group>"; };
+		54F826FD1A576FEF00181063 /* DemoServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoServer.swift; sourceTree = "<group>"; };
+		54F826FE1A576FEF00181063 /* HttpHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHandlers.swift; sourceTree = "<group>"; };
+		54F826FF1A576FEF00181063 /* HttpParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpParser.swift; sourceTree = "<group>"; };
+		54F827001A576FEF00181063 /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		54F827011A576FEF00181063 /* HttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		54F827021A576FEF00181063 /* HttpServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpServer.swift; sourceTree = "<group>"; };
+		54F827031A576FEF00181063 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		7C28C54A7E7FD5EDCB9A1F12 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FB54538A20BBDBD7DBD88F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC833F33050C092C66135D94 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				54F826EF1A55EF0700181063 /* GPS-Data-Bridging-Header.h */,
+				54F826FC1A576FE100181063 /* Swifter */,
 				54F826CA1A55D7D500181063 /* GPS Data */,
 				54F826E01A55D7D600181063 /* GPS DataTests */,
 				54F826C91A55D7D500181063 /* Products */,
@@ -147,6 +169,20 @@
 				54F826E21A55D7D600181063 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54F826FC1A576FE100181063 /* Swifter */ = {
+			isa = PBXGroup;
+			children = (
+				54F826FD1A576FEF00181063 /* DemoServer.swift */,
+				54F826FE1A576FEF00181063 /* HttpHandlers.swift */,
+				54F826FF1A576FEF00181063 /* HttpParser.swift */,
+				54F827001A576FEF00181063 /* HttpRequest.swift */,
+				54F827011A576FEF00181063 /* HttpResponse.swift */,
+				54F827021A576FEF00181063 /* HttpServer.swift */,
+				54F827031A576FEF00181063 /* Socket.swift */,
+			);
+			name = Swifter;
 			sourceTree = "<group>";
 		};
 		B712F322AF745C8149B261F0 /* Pods */ = {
@@ -325,9 +361,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F8270C1A576FEF00181063 /* HttpResponse.swift in Sources */,
+				54F827081A576FEF00181063 /* HttpParser.swift in Sources */,
 				54F826D01A55D7D600181063 /* ViewController.swift in Sources */,
+				54F827041A576FEF00181063 /* DemoServer.swift in Sources */,
 				54F826F21A55F3AC00181063 /* GPS_Data.xcdatamodeld in Sources */,
 				54F826FA1A57513100181063 /* HandoffManager.swift in Sources */,
+				54F8270E1A576FEF00181063 /* HttpServer.swift in Sources */,
+				54F8270A1A576FEF00181063 /* HttpRequest.swift in Sources */,
+				54F827101A576FEF00181063 /* Socket.swift in Sources */,
+				54F827061A576FEF00181063 /* HttpHandlers.swift in Sources */,
 				54F826F51A55F53900181063 /* Position.swift in Sources */,
 				54F826CE1A55D7D600181063 /* AppDelegate.swift in Sources */,
 			);
@@ -338,10 +381,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F826EE1A55EE4200181063 /* CoreDataTests.swift in Sources */,
+				54F8270B1A576FEF00181063 /* HttpRequest.swift in Sources */,
+				54F8270F1A576FEF00181063 /* HttpServer.swift in Sources */,
+				54F827091A576FEF00181063 /* HttpParser.swift in Sources */,
 				54F826F81A574F7D00181063 /* HandoffTests.swift in Sources */,
+				54F827051A576FEF00181063 /* DemoServer.swift in Sources */,
 				54F826FB1A57513100181063 /* HandoffManager.swift in Sources */,
+				54F827111A576FEF00181063 /* Socket.swift in Sources */,
 				54F826F31A55F3AC00181063 /* GPS_Data.xcdatamodeld in Sources */,
 				54F826F61A55F53900181063 /* Position.swift in Sources */,
+				54F8270D1A576FEF00181063 /* HttpResponse.swift in Sources */,
+				54F827071A576FEF00181063 /* HttpHandlers.swift in Sources */,
 				54F826E41A55D7D600181063 /* GPS_DataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

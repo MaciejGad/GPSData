@@ -12,11 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var server: HttpServer?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         MagicalRecord.setupCoreDataStack()
+        let server = HttpServer() // demoServer(NSBundle.mainBundle().resourcePath)
+        server["/"] = { request in
+            return .OK(.HTML("Everything works fine"))
+        }
+        self.server = server
+        var error: NSError?
+        if !server.start(error: &error) {
+            println("Server start error: \(error)")
+        }
+
         return true
     }
 
