@@ -74,13 +74,15 @@ class HandoffTests: XCTestCase {
                         }
                     }
                 }
+                if let activityType = activityType {
+                    XCTAssertEqual(userActivity.activityType, activityType, "User activity type should be \(activityType) not \(userActivity.activityType)")
+                }
             }
         }
     }
     
     override func setUp() {
         super.setUp()
-        HandoffManager.sharedInstance.delegate = nil
     }
     
     override func tearDown() {
@@ -142,5 +144,36 @@ class HandoffTests: XCTestCase {
         manager.delegate = mockResponder
         manager.set(name, url: nil, userInfo:userInfo)
        
+    }
+    
+    func testSetActivityType() {
+        let manager = HandoffManager.sharedInstance
+        let mockResponder = MockUIResponder()
+        let name = "Test name"
+        let type = "pl.test.type"
+        mockResponder.validateUserActivity = createValidateFor(name, url: nil, userInfo:nil, activityType:type)
+        manager.delegate = mockResponder
+        manager.set(name, url: nil, userInfo: nil, activityType: type)
+    }
+    
+    func testSetAll() {
+        let manager = HandoffManager.sharedInstance
+        let mockResponder = MockUIResponder()
+        let name = "Test name"
+        let userInfo = ["test": "dziala"]
+        let url = NSURL(string: "http://google.pl")
+        let type = "pl.test.type"
+        mockResponder.validateUserActivity = createValidateFor(name, url: url, userInfo:userInfo, activityType:type)
+        manager.delegate = mockResponder
+        manager.set(name, url: url, userInfo: userInfo, activityType: type)
+    }
+    
+    func testWeakDelegate() {
+        let manager = HandoffManager.sharedInstance
+        var mockResponder: MockUIResponder? = MockUIResponder()
+        manager.delegate = mockResponder
+        XCTAssertNotNil(manager.delegate, "manager delegate should not be nil")
+        mockResponder = nil
+        XCTAssertNil(manager.delegate, "manager delegate should be nil")
     }
 }

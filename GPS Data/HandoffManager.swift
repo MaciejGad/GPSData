@@ -16,7 +16,7 @@ class HandoffManager: Equatable {
         return Static.instance
     }
     
-    var delegate:UIResponder? {
+    weak var delegate:UIResponder? {
         didSet {
             if let delegte = delegate {
                 if let name = name {
