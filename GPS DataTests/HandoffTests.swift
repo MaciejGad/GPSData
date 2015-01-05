@@ -11,13 +11,79 @@ import XCTest
 
 class HandoffTests: XCTestCase {
 
+    class MockUIResponder: UIResponder {
+        var mockUserActivity:MockNSUserActivity?
+        var validateUserActivity:((userActivity:NSUserActivity?) -> Void)?
+        override var userActivity: NSUserActivity? {
+            set{
+                if let validateUserActivity = validateUserActivity {
+                    validateUserActivity(userActivity: newValue)
+                }
+                if let newValue = newValue {
+                    let mockUserActivity = MockNSUserActivity(activityType: newValue.activityType)
+                    mockUserActivity.title = newValue.title
+                    mockUserActivity.webpageURL = newValue.webpageURL
+                    mockUserActivity.userInfo = newValue.userInfo
+                    self.mockUserActivity = mockUserActivity
+                }
+            }
+            get {
+               return mockUserActivity
+            }
+        }
+    }
+    
+    class MockNSUserActivity: NSUserActivity {
+        var timesBecameCurrent = 0
+        override func becomeCurrent() {
+            timesBecameCurrent += 1
+        }
+    }
+    
+    func createValidateFor(name:String?, url:NSURL?, userInfo:NSDictionary?, activityType:String?) -> ((userActivity:NSUserActivity?) -> Void) {
+        return {
+            userActivity in
+            XCTAssertNotNil(userActivity, "user activity should not be nil")
+            if let userActivity = userActivity {
+                if let name = name {
+                    XCTAssertNotNil(userActivity.title, "user activity title should not be nil")
+                    if let title = userActivity.title {
+                        XCTAssertEqual(title, name , "user activity title should be " + name)
+                    }
+                }
+                if let url = url {
+                     XCTAssertNotNil(userActivity.webpageURL, "user activity webpageURL should not be nil")
+                    if let webpageURL = userActivity.webpageURL {
+                        XCTAssertEqual(webpageURL, url , "user activity title should be " + url.absoluteString!)
+                    }
+                }
+                if let userInfo = userInfo {
+                    XCTAssertNotNil(userActivity.userInfo, "activity user info should not be nil")
+                    if let activityUserInfo = userActivity.userInfo {
+                        XCTAssertEqual(userInfo.count, activityUserInfo.count, "User infos should have the same size")
+                        if(userInfo.count == activityUserInfo.count) {
+                            for (key, value) in userInfo {
+                                let userKey = key as NSObject
+                                let userValue = value as NSObject
+                                let activityValue: NSObject? = activityUserInfo[userKey] as? NSObject
+                                XCTAssertNotNil(activityValue, "value for key \(userKey) is nil")
+                                if let activityValue = activityValue {
+                                    XCTAssertEqual(userValue, activityValue, "value for key \(userKey) differs, test: \(userValue), activity:\(activityValue)")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        HandoffManager.sharedInstance.delegate = nil
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
 
@@ -27,17 +93,54 @@ class HandoffTests: XCTestCase {
         XCTAssertEqual(manager, HandoffManager.sharedInstance, "shared instance should return the same object")
     }
     
-    func testSetURL() {
-        // This is an example of a functional test case.
+    func testSetName() {
         let manager = HandoffManager.sharedInstance
-        XCTAssert(true, "Pass")
+        let mockResponder = MockUIResponder()
+        let name = "Test name"
+        mockResponder.validateUserActivity = createValidateFor(name, url: nil, userInfo:nil, activityType:nil)
+        manager.delegate = mockResponder
+        manager.set(name)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testSetNameBeforDelegate() {
+        let manager = HandoffManager.sharedInstance
+        let mockResponder = MockUIResponder()
+        let name = "Test name"
+        mockResponder.validateUserActivity = createValidateFor(name, url: nil, userInfo:nil, activityType:nil)
+        manager.set(name)
+        manager.delegate = mockResponder
+        mockResponder.validateUserActivity?(userActivity: mockResponder.userActivity)
     }
-
+    
+    func testSetUrl() {
+        let manager = HandoffManager.sharedInstance
+        let mockResponder = MockUIResponder()
+        let name = "Test name"
+        let url = NSURL(string: "http://google.pl")
+        mockResponder.validateUserActivity = createValidateFor(name, url: url, userInfo:nil, activityType:nil)
+        manager.delegate = mockResponder
+        manager.set(name, url: url)
+    }
+    
+    func testSetUrlBeforDelegate() {
+        let manager = HandoffManager.sharedInstance
+        let mockResponder = MockUIResponder()
+        let name = "Test name"
+        let url = NSURL(string: "http://google.pl")
+        mockResponder.validateUserActivity = createValidateFor(name, url: url, userInfo:nil, activityType:nil)
+        manager.set(name, url: url)
+        manager.delegate = mockResponder
+        mockResponder.validateUserActivity?(userActivity: mockResponder.userActivity)
+    }
+    
+    func testSetUserInfo() {
+        let manager = HandoffManager.sharedInstance
+        let mockResponder = MockUIResponder()
+        let name = "Test name"
+        let userInfo = ["test": "dziala"]
+        mockResponder.validateUserActivity = createValidateFor(name, url: nil, userInfo:userInfo, activityType:nil)
+        manager.delegate = mockResponder
+        manager.set(name, url: nil, userInfo:userInfo)
+       
+    }
 }
