@@ -27,12 +27,15 @@ class ViewController: UIViewController {
     }
 
     func startUserActivity() {
-        let activity = NSUserActivity(activityType: "pl.maciejgad.gpsdata")
-        activity.title = "GPS Data"
-        activity.webpageURL = NSURL(string: "http://" + serverHostname())
         
-        userActivity = activity
-        userActivity?.becomeCurrent()
+        HandoffManager.sharedInstance.set("GPS Data", url:  NSURL(string: "http://" + serverHostname()))
+        
+//        let activity = NSUserActivity(activityType: "pl.maciejgad.gpsdata")
+//        activity.title = "GPS Data"
+//        activity.webpageURL = NSURL(string: "http://" + serverHostname())
+//        
+//        userActivity = activity
+//        userActivity?.becomeCurrent()
     }
     
 //    override func updateUserActivityState(activity: NSUserActivity) {

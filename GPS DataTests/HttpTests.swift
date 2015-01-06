@@ -1,33 +1,34 @@
 //
-//  CoreDataTests.swift
+//  HttpTests.swift
 //  GPS Data
 //
-//  Created by Maciek on 01.01.2015.
+//  Created by Maciek on 05.01.2015.
 //  Copyright (c) 2015 Maciej Gad. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class CoreDataTests: XCTestCase {
-    
+class HttpTests: XCTestCase {
+
     override func setUp() {
         super.setUp()
-        MagicalRecord.setupCoreDataStackWithInMemoryStore()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        MagicalRecord.cleanUp()
         super.tearDown()
     }
-    
-    func disabledTestCreationOfEntity() {
+
+    func testExample() {
         // This is an example of a functional test case.
-        let p = Position.MR_createEntity() as Position
-        p.altitude = 441;
-        
-        XCTAssertNotNil(p, "Position must not be nil")
+        XCTAssert(true, "Pass")
+    }
+
+    func testSingleton() {
+        let manager: HttpManager = HttpManager.sharedInstance
+        XCTAssertNotNil(manager, "Should not be nil")
+        XCTAssertEqual(manager, HttpManager.sharedInstance, "shared instance should return the same object")
     }
 }

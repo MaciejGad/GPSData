@@ -17,13 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         MagicalRecord.setupCoreDataStack()
+        HandoffManager.sharedInstance.delegate = self
         let server = HttpServer() // demoServer(NSBundle.mainBundle().resourcePath)
         server["/"] = { request in
             return .OK(.HTML("Everything works fine"))
         }
         self.server = server
         var error: NSError?
-        if !server.start(listenPort: 80, error: &error) {
+        if !server.start(listenPort: 8080, error: &error) {
             println("Server start error: \(error)")
         } else {
             println("Use " + serverHostname())
